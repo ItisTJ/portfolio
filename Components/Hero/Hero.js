@@ -12,8 +12,11 @@ export default function Hero() {
 
   const texts = [
     "3rd Year Undergraduate",
-    "Cyber Security Enthusiast"
+    "Enthusiast",
+    "Developer"
   ]
+
+  const colors = ["#FF5733", "#33C1FF", "#75FF33"]
 
   useEffect(() => {
     const typeSpeed = 100
@@ -102,10 +105,10 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
           >
-            <h1 className="main-headline">Hi, I am Thisara</h1>
+            <h1 className="main-headline">Hi, I am Thilina</h1>
             <div className="headline-info">
               <div className="typewriter-container">
-                <span className="typewriter-text">{text}</span>
+                <span className="typewriter-text" style={{ color: colors[textIndex] }}>{text}</span>
                 <span className="cursor">|</span>
               </div>
             </div>
@@ -120,10 +123,7 @@ export default function Hero() {
             <h2 className="who-am-i-title">WHO AM I?</h2>
             <div className="description">
               <p>
-                A third-year undergraduate at the Faculty of Information Technology, 
-                University of Moratuwa, with a strong passion for full-stack development, 
-                networking, and cybersecurity. Enthusiastic about working in collaborative 
-                team environments and always motivated to take on new challenges.
+                An enthusiastic undergraduate software engineer passionate about building modern and practical digital solutions. I enjoy learning new technologies quickly and applying them to create impactful projects, from e-commerce platforms to innovative applications. My focus is on writing clean, efficient code and constantly improving my skills to stay aligned with the latest trends in the tech industry.
               </p>
             </div>
           </motion.div>

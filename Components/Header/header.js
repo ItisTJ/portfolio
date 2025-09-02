@@ -69,7 +69,7 @@ export default function Header() {
       <div className="header-left">
         <div className="logo">
           <div className="logo-placeholder">TS</div>
-          <div className="personal-name">Thisara Senadeera</div>
+          <div className="personal-name">Thilina Jayasingha</div>
         </div>
       </div>
       

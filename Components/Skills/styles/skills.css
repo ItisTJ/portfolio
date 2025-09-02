@@ -5,14 +5,19 @@
   text-align: center;
 }
 
-.skills-container {
+.skills-section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 3rem;
+  width: 100%;
 }
 
 .skills-title {
+  display:flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  padding-left: auto;
   font-size: 40px;
   font-weight: 600;
   color: #ffffff;

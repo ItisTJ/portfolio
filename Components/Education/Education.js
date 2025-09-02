@@ -16,24 +16,24 @@ const educationData = [
   },
   {
     id: 2,
-    title: "Poramadulla Central College",
+    title: "R/Sivali Central College",
     degree: "GCE Advanced Level (A/L)",
     period: "2021",
-    description: "Completed Advanced Level examination with focus on Chemistry, Biology and Physics as main subjects.",
-    location: "Nuwara Eliya, Sri Lanka",
+    description: "Completed Advanced Level examination with focus on Combined Maths, Physics and ICT as main subjects with a 2.5324 Z-Score.",
+    location: "Rathnapura, Sri Lanka",
     iconImage: "https://seekicon.com/free-icon-download/book_4.png",
-    achievements: ["A/L Completed", "Science Stream", "A B C"],
+    achievements: ["A/L Completed", "Common Stream", "A A A"],
     position: "right"
   },
   {
     id: 3,
-    title: "Poramadulla Central College",
+    title: "R/Sivali Central College",
     degree: "GCE Ordinary Level (O/L)",
-    period: "2016",
-    description: "GCE Ordinary Level examination completed with Information and Communication technology and English literature as basket subjects.",
-    location: "Nuwara Eliya, Sri Lanka",
+    period: "2018",
+    description: "GCE Ordinary Level examination completed with Information and Communication technology as a basket subject.",
+    location: "Rathnapura, Sri Lanka",
     iconImage: "https://seekicon.com/free-icon-download/book_4.png",
-    achievements: ["O/L Completed", "A7 B2"],
+    achievements: ["O/L Completed", "9 A's"],
     position: "left"
   }
 ]
