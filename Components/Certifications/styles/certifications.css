@@ -1,0 +1,230 @@
+.certifications {
+  padding: 4rem 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.certifications-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+}
+
+.certifications-title {
+  font-size: 40px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 2rem;
+}
+
+.certifications-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.certification-card {
+  background: rgba(30, 41, 59, 0.9);
+  border: 1px solid #6366f1;
+  border-radius: 12px;
+  padding: 2rem;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.15);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.certification-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(99, 102, 241, 0.3);
+  border-color: #818cf8;
+}
+
+.cert-logo {
+  margin-bottom: 1.5rem;
+}
+
+.logo-container {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #374151, #1f2937);
+  border: 2px solid #4b5563;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.logo-icon {
+  font-size: 32px;
+  color: white;
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  transition: all 0.3s ease;
+}
+
+.cert-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+.cert-issuer {
+  font-size: 14px;
+  color: #6366f1;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+.certification-card .verify-button {
+  margin-top: auto;
+}
+
+.verify-button {
+  display: inline-block;
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  min-height: 44px;
+  line-height: 1.2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.verify-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(99, 102, 241, 0.4);
+}
+
+.certifications-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.action-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(99, 102, 241, 0.1);
+  border: 1px solid #6366f1;
+  color: #6366f1;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.action-button:hover {
+  background: rgba(99, 102, 241, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
+}
+
+.arrow-icon {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .certifications {
+    padding: 3rem 1.5rem;
+  }
+
+  .certifications-title {
+    font-size: 32px;
+  }
+
+  .certifications-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .certification-card {
+    padding: 1.5rem;
+  }
+
+  .logo-container {
+    width: 60px;
+    height: 60px;
+  }
+
+  .logo-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 24px;
+  }
+
+  .cert-title {
+    font-size: 1rem;
+  }
+
+  .cert-issuer {
+    font-size: 13px;
+  }
+
+  .verify-button {
+    padding: 0.6rem 1.2rem;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .certifications {
+    padding: 2rem 1rem;
+  }
+
+  .certifications-title {
+    font-size: 28px;
+  }
+
+  .certifications-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .certification-card {
+    padding: 1.25rem;
+  }
+
+  .cert-title {
+    font-size: 0.95rem;
+  }
+
+  .certifications-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .action-button {
+    width: 100%;
+    max-width: 200px;
+    justify-content: center;
+  }
+}
