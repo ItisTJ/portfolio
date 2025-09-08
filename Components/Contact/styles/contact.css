@@ -119,19 +119,19 @@
 }
 
 .linkedin {
-  background: #ffffff;
+  color:rgb(69, 69, 246);
 }
 
 .github {
-  background: #202020;
+  color:rgb(255, 255, 255);
 }
 
 .whatsapp {
-  background: #ffffff;
+  color:chartreuse;
 }
 
 .instagram {
-  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+  color:deeppink;
 }
 
 /* Get In Touch Form Styles */

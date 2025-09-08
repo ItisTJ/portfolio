@@ -26,7 +26,7 @@ export default function GetInTouch() {
     const subject = `Contact from ${formData.name}`
     const body = `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
     
-    const mailtoLink = `mailto:thisarasenadeera2000@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+    const mailtoLink = `mailto:thilinajayasingha2003@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
     
     // Open default email client
     window.open(mailtoLink)

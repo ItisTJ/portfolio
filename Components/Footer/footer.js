@@ -8,7 +8,7 @@ export default function Footer() {
     <footer className="footer">
       <div className="footer-content">
         <p className="copyright">
-          Copyright © {currentYear} Thisara Senadeera
+          Copyright © {currentYear} Thilina Jayasingha
         </p>
       </div>
     </footer>

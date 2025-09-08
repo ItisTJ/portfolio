@@ -40,6 +40,7 @@ export default function ProjectModal({
         >
           ×
         </button>
+        <br></br>
         
         <div className="modal-content">
           <div className="modal-image">

@@ -86,8 +86,8 @@ export default function Hero() {
               transition={{ type: "spring", stiffness: 300 }}
             >
               <img 
-                src="https://media.licdn.com/dms/image/v2/D4E03AQEkaJXphghWgg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1699168959569?e=1756944000&v=beta&t=0ibECo1M0xdEQ-jA9fL8Rwu7134miNxc_ZHcgJRMMCs" 
-                alt="Thisara Senadeera Profile" 
+                src="/me.png"
+                alt="Thilina Jayasingha Profile" 
               />
             </motion.div>
           </div>

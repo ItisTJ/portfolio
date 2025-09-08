@@ -58,7 +58,6 @@ export default function Header() {
   const navItems = [
     { id: 'home', label: 'Home' },
     { id: 'education', label: 'Education' },
-    { id: 'certifications', label: 'Certifications' },
     { id: 'skills', label: 'Skills' },
     { id: 'projects', label: 'Projects' },
     { id: 'contact', label: 'Contact' }
@@ -68,7 +67,6 @@ export default function Header() {
     <header className="header">
       <div className="header-left">
         <div className="logo">
-          <div className="logo-placeholder">TS</div>
           <div className="personal-name">Thilina Jayasingha</div>
         </div>
       </div>
