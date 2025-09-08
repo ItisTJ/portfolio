@@ -19,7 +19,15 @@ const skills = [
   { name: "MySQL", image: "./skills/mysql.png" },
   { name: "Python", image: "./skills/python.png" },
   { name: "Java", image: "./skills/java.png" },
-  { name: "Figma", image: "./skills/figma.png" }
+  { name: "Figma", image: "./skills/figma.png" },
+  { name: "MicroPython", image: "./skills/micropython.png" },
+  { name: "Blender", image: "./skills/blender.png" },
+  { name: "Godot", image: "./skills/godot.png" },
+  { name: "C", image: "./skills/c.png" },
+  { name: "Nest.js", image: "./skills/nestjs.png" },
+  { name: "PHP", image: "./skills/php.png" },
+  { name: "Vercel", image: "./skills/vercel.png" },
+  { name: "Tailwind CSS", image: "./skills/tailwind.png" },
 ]
 
 // --- rotating planet ---
@@ -83,7 +91,7 @@ function SkillOrbit({ skills }) {
           <group key={i} position={[x, 0, z]}>
             {/* Skill Icon */}
             <mesh>
-              <planeGeometry args={[0.8, 0.8]} />
+              <planeGeometry args={[0.5, 0.5]} />
               <meshBasicMaterial map={textures[i]} transparent />
             </mesh>
           </group>

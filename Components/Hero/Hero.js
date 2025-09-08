@@ -55,7 +55,7 @@ export default function Hero() {
   }, [text, isDeleting, textIndex, charIndex, texts])
 
   const handleResumeClick = () => {
-    window.open('/resume.pdf', '_blank')
+    window.open('/my-resume.pdf', '_blank')
   }
 
   const handleContactClick = () => {
