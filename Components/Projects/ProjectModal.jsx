@@ -4,7 +4,7 @@ import { useEffect } from 'react'
 export default function ProjectModal({ 
   title, 
   description, 
-  image,  
+  video,  
   technologies, 
   onClose 
 }) {
@@ -40,11 +40,20 @@ export default function ProjectModal({
         >
           ×
         </button>
-        <br></br>
-        
+        <br />
+
         <div className="modal-content">
-          <div className="modal-image">
-            <img src={image} alt={title} />
+          <div className="modal-video">
+            <div className="video-wrapper">
+              <iframe 
+                src={video} 
+                title="YouTube video player" 
+                frameBorder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerPolicy="strict-origin-when-cross-origin" 
+                allowFullScreen
+              ></iframe>
+            </div>
           </div>
           
           <div className="modal-header">
@@ -65,6 +74,25 @@ export default function ProjectModal({
           </div>
         </div>
       </div>
+
+      {/* Add these styles to your CSS */}
+      <style jsx>{`
+        .video-wrapper {
+          position: relative;
+          padding-bottom: 56.25%; /* 16:9 aspect ratio */
+          height: 0;
+          overflow: hidden;
+          border-radius: 12px;
+        }
+
+        .video-wrapper iframe {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+        }
+      `}</style>
     </div>
   )
-} 
+}

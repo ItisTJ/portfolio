@@ -31,27 +31,21 @@ const contactData = [
 const socialLinks = [
   {
     name: "LinkedIn",
-    url: "https://www.linkedin.com/in/thisara-senadeera-404b43299",
+    url: "https://www.linkedin.com/in/thilina-jayasingha-717241287/",
     icon: faLinkedin,
     className: "linkedin",
   },
   {
     name: "GitHub",
-    url: "https://github.com/2000Thisara",
+    url: "https://github.com/ITisTJ",
     icon: faGithub,
     className: "github",
   },
   {
     name: "WhatsApp",
-    url: "https://wa.me/94779642375",
+    url: "https://wa.me/94761521775",
     icon: faWhatsapp,
     className: "whatsapp",
-  },
-  {
-    name: "Instagram",
-    url: "https://www.instagram.com/thisara_senadeera",
-    icon: faInstagram,
-    className: "instagram",
   },
 ]
 
