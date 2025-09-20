@@ -32,9 +32,6 @@ export default function Home() {
         <section id="projects">
           <Projects />
         </section>
-        <section id="get-in-touch">
-          <GetInTouch />
-        </section>
         <section id="contact">
           <Contact />
         </section>

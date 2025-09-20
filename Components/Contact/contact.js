@@ -4,8 +4,8 @@ import "./styles/contact.css"
 
 // Font Awesome Imports
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faEnvelope, faPhone, faLocationDot } from "@fortawesome/free-solid-svg-icons"
-import { faLinkedin, faGithub, faWhatsapp, faInstagram } from "@fortawesome/free-brands-svg-icons"
+import { faLinkedin, faGithub, faWhatsapp, faYoutube, faFacebook } from "@fortawesome/free-brands-svg-icons"
+import GetInTouch from "./GetInTouch.js"
 
 const contactData = [
   {
@@ -47,6 +47,17 @@ const socialLinks = [
     icon: faWhatsapp,
     className: "whatsapp",
   },
+  {
+    name: "YouTube",
+    url: "https://www.instagram.com/thilinajayasingha/",
+    icon: faYoutube,
+    className: "youtube",
+  },
+  { name: "Facebook",
+    url: "https://www.facebook.com/thilina.jayasingha.7",
+    icon: faFacebook,
+    className: "facebook",
+  },
 ]
 
 export default function Contact() {
@@ -84,13 +95,20 @@ export default function Contact() {
       viewport={{ once: true, amount: 0.2 }}
       variants={containerVariants}
     >
-      <div className="contact-container">
+      <div className="contact-container ">
+                  
         {/* Contact Info */}
-        <motion.div className="contact-cards" variants={containerVariants}>
+        <motion.div className="contact-cards col-span-2" variants={containerVariants}>
+          <div> <GetInTouch
+                modelPath="/rocket.glb" 
+                clasName="col-1"
+              /> 
+          </div>
+          <div className="cards-grid flex row ">
           {contactData.map((contact) => (
             <motion.div
               key={contact.id}
-              className="contact-card"
+              className="contact-card mb-5"
               variants={cardVariants}
               whileHover={{ scale: 1.05, y: -5, transition: { duration: 0.2 } }}
             >
@@ -101,6 +119,7 @@ export default function Contact() {
               <p className="card-value">{contact.value}</p>
             </motion.div>
           ))}
+          </div>
         </motion.div>
 
         {/* Social Media */}
@@ -121,7 +140,7 @@ export default function Contact() {
                 custom={index}
                 whileHover={{
                   scale: 1.2,
-                  rotate: [0, -10, 10, -10, 0],
+                  rotate: [0, -20, 20, -20, 0],
                   transition: { duration: 0.4 },
                 }}
                 whileTap={{ scale: 0.9 }}

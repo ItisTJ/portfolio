@@ -31,6 +31,7 @@
   min-width: 200px;
   flex: 1;
   max-width: 250px;
+  margin: 22px;
 }
 
 .contact-card:hover {
@@ -130,8 +131,12 @@
   color:chartreuse;
 }
 
-.instagram {
-  color:deeppink;
+.youtube{
+  color:rgb(255, 0, 0);
+}
+
+.facebook{
+  color:rgb(0, 0, 255);
 }
 
 /* Get In Touch Form Styles */

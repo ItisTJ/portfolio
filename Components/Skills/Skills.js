@@ -107,9 +107,9 @@ export default function SkillsPlanet() {
     <div className="skills">
       <h2 className="skills-title">Skills</h2>
     
-    <div style={{ display:"flex", textAlign:"center", idth: "100%", height: "600px" }}>
+    <div style={{ display:"flex", textAlign:"center", width: "100%", height: "600px" }}>
 
-      <Canvas camera={{ position: [0, 3, 8], fov: 50 }}>
+      <Canvas camera={{ position: [0, 0, 8], fov: 50 }}>
         <ambientLight intensity={5} />
         <directionalLight position={[5, 5, 5]} intensity={7} />
         <Planet />
@@ -117,8 +117,9 @@ export default function SkillsPlanet() {
         <OrbitControls
           enablePan={false}
           enableZoom={false}
-          maxPolarAngle={Math.PI / 2.2}
-          minPolarAngle={Math.PI / 3}
+          maxPolarAngle={Math.PI / 2.8}
+          minPolarAngle={Math.PI / 2.8}
+          rotateSpeed={0.5}
         />
       </Canvas>
     </div>

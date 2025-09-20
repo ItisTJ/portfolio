@@ -59,7 +59,7 @@ export default function Hero() {
   }
 
   const handleContactClick = () => {
-    const contactSection = document.getElementById('get-in-touch')
+    const contactSection = document.getElementById('contact')
     if (contactSection) {
       contactSection.scrollIntoView({ behavior: 'smooth' })
     }
