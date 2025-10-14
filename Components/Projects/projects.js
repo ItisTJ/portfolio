@@ -13,7 +13,7 @@ const projectsData = [
     technologies: ["Next.js", "Nest.js", "MongoDB", "React"],
     githubUrl1: "https://github.com/ItisTJ/my-app",
     githubUrl2: "https://github.com/2000Thisara/server",
-    linkedinUrl: "https://linkedin.com/in/yourusername"
+    linkedinUrl: "https://www.linkedin.com/in/thilina-jayasingha-717241287/"
   },
   {
     title: "Smart Food Vending Machine (Bun & Run)",
@@ -22,7 +22,7 @@ const projectsData = [
     image: "Projects/bun&run.png",
     video: "https://www.youtube.com/embed/v2uJJjcb4LI?si=mI3fJ8auBZfEHDA-&autoplay=1&mute=1",
     technologies: ["ESP32", "Node.js", "Firebase", "MicroPython"],
-    linkedinUrl: "https://linkedin.com/in/yourusername"
+    linkedinUrl: "https://www.linkedin.com/in/thilina-jayasingha-717241287/"
   },
   {
     title: "E-commerce Platform for Bathware (Bathlux)",
@@ -32,7 +32,7 @@ const projectsData = [
     video: "https://www.youtube.com/embed/QyGax8JEP40?si=KTqzfShR2FENAMqe&modestbranding=1&rel=0&controls=1&autoplay=1&mute=1",
     technologies: ["HTML", "CSS", "JavaScript", "PHP", "SQL"],
     githubUrl1: "https://github.com/lahiruimesh/BATHLUXE",
-    linkedinUrl: "https://linkedin.com/in/yourusername"
+    linkedinUrl: "https://www.linkedin.com/in/thilina-jayasingha-717241287/"
   }
 ]
 
