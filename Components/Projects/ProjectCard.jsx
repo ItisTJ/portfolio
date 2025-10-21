@@ -11,7 +11,9 @@ export default function ProjectCard({
   fullDescription,
   githubUrl1,
   githubUrl2,
-  linkedinUrl
+  linkedinUrl,
+  youtubeUrl1,
+  youtubeUrl2
 }) {
   const [isModalOpen, setIsModalOpen] = useState(false)
 
@@ -88,6 +90,33 @@ export default function ProjectCard({
                     </svg>
                   </a>
                 )}
+                {youtubeUrl1 && (
+                  <a 
+                    href={youtubeUrl1} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="project-link youtube-link"
+                    aria-label="View youtube playlist"
+                  >
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M23.498 6.186a2.972 2.972 0 0 0-2.092-2.103C19.651 3.5 12 3.5 12 3.5s-7.651 0-9.406.583A2.972 2.972 0 0 0 .502 6.186 31.12 31.12 0 0 0 0 12a31.12 31.12 0 0 0 .502 5.814 2.972 2.972 0 0 0 2.092 2.103C4.349 20.5 12 20.5 12 20.5s7.651 0 9.406-.583a2.972 2.972 0 0 0 2.092-2.103A31.12 31.12 0 0 0 24 12a31.12 31.12 0 0 0-.502-5.814zM9.75 15.5v-7l6 3.5-6 3.5z" />
+                    </svg>
+                  </a>
+                )}
+                {youtubeUrl2 && (
+                  <a 
+                    href={youtubeUrl2} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="project-link youtube-link"
+                    aria-label="View YouTube video"
+                  >
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M23.498 6.186a2.972 2.972 0 0 0-2.092-2.103C19.651 3.5 12 3.5 12 3.5s-7.651 0-9.406.583A2.972 2.972 0 0 0 .502 6.186 31.12 31.12 0 0 0 0 12a31.12 31.12 0 0 0 .502 5.814 2.972 2.972 0 0 0 2.092 2.103C4.349 20.5 12 20.5 12 20.5s7.651 0 9.406-.583a2.972 2.972 0 0 0 2.092-2.103A31.12 31.12 0 0 0 24 12a31.12 31.12 0 0 0-.502-5.814zM9.75 15.5v-7l6 3.5-6 3.5z" />
+                    </svg>
+                  </a>
+                )}
+
               </div>
             </div>
           </div>
@@ -102,6 +131,8 @@ export default function ProjectCard({
           video={video}
           technologies={technologies}
           onClose={closeModal}
+          youtubeUrl1={youtubeUrl1}
+          youtubeUrl2={youtubeUrl2}
         />
       )}
     </>

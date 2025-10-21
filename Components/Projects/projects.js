@@ -33,6 +33,17 @@ const projectsData = [
     technologies: ["HTML", "CSS", "JavaScript", "PHP", "SQL"],
     githubUrl1: "https://github.com/lahiruimesh/BATHLUXE",
     linkedinUrl: "https://www.linkedin.com/in/thilina-jayasingha-717241287/"
+  },
+
+  {
+    title: "EVINC - Animation Workshop and Competetition",
+    description: "Chairman of EVINC 2023, the premier animation workshop and competition in Sri Lanka. connected with Leo club of University of Moratuwa.",
+    fullDescription: "Chairman of EVINC 2023, the premier animation workshop and competition in Sri Lanka organized by Leo club of University of Moratuwa. Organized workshops, guest lectures, and a national competition to promote animation skills among students. Managed a team of volunteers and coordinated with industry professionals to ensure a successful event.",
+    image: "/projects/evinc.png",
+    video: "https://www.youtube.com/embed/3vyEfH7k7hA?si=cI1n6tWOig8tYC6D&modestbranding=1&rel=0&controls=1&autoplay=1&mute=1",
+    technologies: ["Blender"],
+    youtubeUrl1: "https://www.youtube.com/playlist?list=PL9E-L1KosNppJ9Rl-X2c1ULTs_FnoRE-I",
+    youtubeUrl2: "https://www.youtube.com/playlist?list=PL9E-L1KosNpp3pLTVxt7y_DQIPI-gTc3o",
   }
 ]
 
@@ -91,6 +102,8 @@ export default function Projects() {
                 githubUrl1={project.githubUrl1}
                 githubUrl2={project.githubUrl2}
                 linkedinUrl={project.linkedinUrl}
+                youtubeUrl1={project.youtubeUrl1}
+                youtubeUrl2={project.youtubeUrl2}
               />
             </motion.div>
           ))}

@@ -6,7 +6,9 @@ export default function ProjectModal({
   description, 
   video,  
   technologies, 
-  onClose 
+  onClose,
+  youtubeUrl1,
+  youtubeUrl2
 }) {
   useEffect(() => {
     const handleEscape = (e) => {
@@ -71,6 +73,20 @@ export default function ProjectModal({
                 <span key={index} className="technology-tag">{tech}</span>
               ))}
             </div>
+          </div>
+          <div className="modal-links">
+            {youtubeUrl1 && (
+              <a href={youtubeUrl1} target="_blank" rel="noopener noreferrer" className="font-medium text-blue-600 hover:underline p-2 border-radius-lg bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500">
+                YouTube Playlist  
+              </a>
+            )}
+          </div>
+          <div className="modal-links">
+            {youtubeUrl2 && (
+              <a href={youtubeUrl2} target="_blank" rel="noopener noreferrer" className="font-medium text-blue-600 hover:underline p-2 border-radius-lg bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500">
+                YouTube Playlist
+              </a>
+            )}
           </div>
         </div>
       </div>

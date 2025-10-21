@@ -10,7 +10,7 @@ const educationData = [
     period: "2023 - 2027",
     description: "Pursuing a comprehensive degree in Information Technology with focus on software development, data structures, and modern web technologies.",
     location: "Moratuwa, Sri Lanka",
-    iconImage: "https://seekicon.com/free-icon-download/book_4.png",
+    iconImage: "https://upload.wikimedia.org/wikipedia/en/6/60/University_of_Moratuwa_logo.png",
     achievements: ["Third Year", "Core IT Foundation"],
     position: "left"
   },
@@ -21,7 +21,7 @@ const educationData = [
     period: "2021",
     description: "Completed Advanced Level examination with focus on Combined Maths, Physics and ICT as main subjects with a 2.5324 Z-Score.",
     location: "Rathnapura, Sri Lanka",
-    iconImage: "https://seekicon.com/free-icon-download/book_4.png",
+    iconImage: "https://samithe.yolasite.com/resources/logo.gif",
     achievements: ["A/L Completed", "Common Stream", "A A A"],
     position: "right"
   },
@@ -32,7 +32,7 @@ const educationData = [
     period: "2018",
     description: "GCE Ordinary Level examination completed with Information and Communication technology as a basket subject.",
     location: "Rathnapura, Sri Lanka",
-    iconImage: "https://seekicon.com/free-icon-download/book_4.png",
+    iconImage: "https://samithe.yolasite.com/resources/logo.gif",
     achievements: ["O/L Completed", "9 A's"],
     position: "left"
   }
