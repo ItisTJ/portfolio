@@ -2,13 +2,14 @@
   padding: 4rem 3rem;
   max-width: 1200px;
   margin: 0 auto;
+  height: 100vh;
 }
 
 .hero-content {
   display: grid;
   grid-template-columns: 1fr 2fr;
   gap: 4rem;
-  align-items: start;
+  align-items: center;
 }
 
 .hero-left {
@@ -37,8 +38,8 @@
 }
 
 .image-placeholder {
-  width: 350px;
-  height: 350px;
+  width: 450px;
+  height: 450px;
   border-radius: 100%;
   display: flex;
   align-items: center;

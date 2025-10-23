@@ -22,7 +22,7 @@ const educationData = [
     description: "Completed Advanced Level examination with focus on Combined Maths, Physics and ICT as main subjects with a 2.5324 Z-Score.",
     location: "Rathnapura, Sri Lanka",
     iconImage: "https://samithe.yolasite.com/resources/logo.gif",
-    achievements: ["A/L Completed", "Common Stream", "A A A"],
+    achievements: ["A A A", "2.5324 Z-Score"],
     position: "right"
   },
   {
