@@ -4,6 +4,7 @@ import './style.css';
 export default function Loader() {
   return (
     <div className="loader-overlay">
+      <img src="/astro-loader.gif" alt="Loading..." className="loader-gif" />
 
 <div className="loader-wrapper">
   <span className="loader-letter">L</span>
