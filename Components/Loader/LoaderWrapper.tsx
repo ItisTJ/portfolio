@@ -8,22 +8,10 @@ export default function LoaderWrapper({ children }: { children: React.ReactNode 
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    const hideLoader = () => setLoading(false)
+    // Always show loader for 4 seconds
+    const timer = setTimeout(() => setLoading(false), 5000)
 
-    // Wait until all assets are loaded
-    if (document.readyState === "complete") {
-      hideLoader()
-    } else {
-      window.addEventListener("load", hideLoader)
-    }
-
-    // Fallback 4s timeout
-    const maxTimeout = setTimeout(hideLoader, 4000)
-
-    return () => {
-      window.removeEventListener("load", hideLoader)
-      clearTimeout(maxTimeout)
-    }
+    return () => clearTimeout(timer)
   }, [])
 
   return <>{loading ? <Loader /> : children}</>
