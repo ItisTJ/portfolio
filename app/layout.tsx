@@ -1,3 +1,5 @@
+"use client"
+
 import type { Metadata } from "next"
 import "./global-clean.css"
 import { useEffect, useState } from "react"
