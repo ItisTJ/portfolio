@@ -12,25 +12,8 @@ import Contact from '../Components/Contact/contact'
 import Footer from '../Components/Footer/footer'
 import BackgroundAnimation from '../Components/BackgroundAnimation/BackgroundAnimation'
 
-// Import your Loader component
-import Loader from '../Components/Loader/Loader'
 
 export default function Home() {
-  const [loading, setLoading] = useState(true)
-
-  useEffect(() => {
-    // Show loader for 2 seconds
-    const timer = setTimeout(() => {
-      setLoading(false)
-    }, 2000)
-
-    // Cleanup timer
-    return () => clearTimeout(timer)
-  }, [])
-
-  if (loading) {
-    return <Loader />
-  }
 
   return (
     <div className="min-h-screen">
