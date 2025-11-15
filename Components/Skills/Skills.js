@@ -1,10 +1,9 @@
 "use client"
 
-import React, { useRef, useMemo } from "react"
-import { Canvas, useFrame, useLoader, useThree } from "@react-three/fiber" // ✅ include useLoader
+import React, { useRef, useMemo, useState, useEffect } from "react"
+import { Canvas, useFrame, useThree } from "@react-three/fiber"
 import { OrbitControls, Text } from "@react-three/drei"
 import * as THREE from "three"
-import './styles/skills.css'
 
 // --- skills data ---
 const skills = [
@@ -31,21 +30,24 @@ const skills = [
 ]
 
 // --- rotating planet ---
-function Planet() {
+function Planet({ scale }) {
   const planetRef = useRef()
-
-  // Load the Earth texture from /public folder
-  const earthTexture = useLoader(THREE.TextureLoader, "/earth.png") // ✅ make sure earth.jpg is in /public
+  
+  // Load the Earth texture
+  const earthTexture = useMemo(() => {
+    const loader = new THREE.TextureLoader()
+    return loader.load("/earth.png")
+  }, [])
 
   useFrame(() => {
     if (planetRef.current) {
-      planetRef.current.rotation.y += 0.002 // rotate slowly around Y
+      planetRef.current.rotation.y += 0.002
     }
   })
 
   return (
     <mesh ref={planetRef}>
-      <sphereGeometry args={[2.5, 64, 64]} />
+      <sphereGeometry args={[2.5 * scale, 64, 64]} />
       <meshStandardMaterial
         color="#1d3557"
         metalness={0.4}
@@ -57,13 +59,16 @@ function Planet() {
 }
 
 // --- skills orbiting around planet ---
-function SkillOrbit({ skills }) {
+function SkillOrbit({ skills, radius, iconScale }) {
   const groupRef = useRef()
   const { camera } = useThree()
+  const [hoveredIndex, setHoveredIndex] = useState(null)
 
-  // Load all skill images as textures
   const textures = useMemo(
-    () => skills.map(skill => useLoader(THREE.TextureLoader, skill.image)),
+    () => skills.map(skill => {
+      const loader = new THREE.TextureLoader()
+      return loader.load(skill.image)
+    }),
     [skills]
   )
 
@@ -71,14 +76,11 @@ function SkillOrbit({ skills }) {
     if (groupRef.current) {
       groupRef.current.rotation.y += 0.003
 
-      // Make each icon face the camera
       groupRef.current.children.forEach(child => {
         child.lookAt(camera.position)
       })
     }
   })
-
-  const radius = 4
 
   return (
     <group ref={groupRef}>
@@ -86,14 +88,81 @@ function SkillOrbit({ skills }) {
         const angle = (i / skills.length) * Math.PI * 2
         const x = radius * Math.cos(angle)
         const z = radius * Math.sin(angle)
+        const isHovered = hoveredIndex === i
 
         return (
           <group key={i} position={[x, 0, z]}>
             {/* Skill Icon */}
-            <mesh>
-              <planeGeometry args={[0.5, 0.5]} />
-              <meshBasicMaterial map={textures[i]} transparent />
+            <mesh
+              onPointerOver={() => setHoveredIndex(i)}
+              onPointerOut={() => setHoveredIndex(null)}
+            >
+              <planeGeometry args={[0.5 * iconScale * (isHovered ? 1.3 : 1), 0.5 * iconScale * (isHovered ? 1.3 : 1)]} />
+              <meshBasicMaterial 
+                map={textures[i]} 
+                transparent 
+                opacity={1}
+              />
+              {isHovered && (
+                <pointLight 
+                  position={[0, 0, 0.5]} 
+                  color="#6366f1" 
+                  intensity={2} 
+                  distance={1.5}
+                />
+              )}
             </mesh>
+            
+            {/* Duplicate icon for glow effect (behind) */}
+            {isHovered && (
+              <>
+                <mesh position={[0, 0, -0.02]}>
+                  <planeGeometry args={[0.6 * iconScale, 0.6 * iconScale]} />
+                  <meshBasicMaterial 
+                    map={textures[i]}
+                    transparent 
+                    opacity={0.6}
+                    color="#6366f1"
+                    blending={THREE.AdditiveBlending}
+                  />
+                </mesh>
+                <mesh position={[0, 0, -0.04]}>
+                  <planeGeometry args={[0.7 * iconScale, 0.7 * iconScale]} />
+                  <meshBasicMaterial 
+                    map={textures[i]}
+                    transparent 
+                    opacity={0.4}
+                    color="#6366f1"
+                    blending={THREE.AdditiveBlending}
+                  />
+                </mesh>
+                <mesh position={[0, 0, -0.06]}>
+                  <planeGeometry args={[0.8 * iconScale, 0.8 * iconScale]} />
+                  <meshBasicMaterial 
+                    map={textures[i]}
+                    transparent 
+                    opacity={0.2}
+                    color="#6366f1"
+                    blending={THREE.AdditiveBlending}
+                  />
+                </mesh>
+              </>
+            )}
+            
+            {/* Label */}
+            {isHovered && (
+              <Text
+                position={[0, 0.5 * iconScale, 0]}
+                fontSize={0.15 * iconScale}
+                color="#ffffff"
+                anchorX="center"
+                anchorY="middle"
+                outlineWidth={0.02}
+                outlineColor="#6366f1"
+              >
+                {skill.name}
+              </Text>
+            )}
           </group>
         )
       })}
@@ -103,26 +172,82 @@ function SkillOrbit({ skills }) {
 
 // --- main scene ---
 export default function SkillsPlanet() {
-  return (
-    <div className="skills">
-      <h2 className="skills-title">Skills</h2>
-    
-    <div style={{ display:"flex", textAlign:"center", width: "100%", height: "600px" }}>
+  const [dimensions, setDimensions] = useState({
+    width: typeof window !== 'undefined' ? window.innerWidth : 1200,
+    height: 600
+  })
 
-      <Canvas camera={{ position: [0, 0, 8], fov: 50 }}>
-        <ambientLight intensity={5} />
-        <directionalLight position={[5, 5, 5]} intensity={7} />
-        <Planet />
-        <SkillOrbit skills={skills} />
-        <OrbitControls
-          enablePan={false}
-          enableZoom={false}
-          maxPolarAngle={Math.PI / 2.8}
-          minPolarAngle={Math.PI / 2.8}
-          rotateSpeed={0.5}
-        />
-      </Canvas>
-    </div>
+  useEffect(() => {
+    const handleResize = () => {
+      const width = window.innerWidth
+      let height = 600
+      
+      if (width < 480) {
+        height = 380
+      } else if (width < 768) {
+        height = 480
+      }
+      
+      setDimensions({ width, height })
+    }
+
+    handleResize()
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
+
+  // Responsive values based on screen width
+  const isMobile = dimensions.width < 768
+  const isSmallMobile = dimensions.width < 480
+
+  const cameraDistance = isSmallMobile ? 10 : isMobile ? 9 : 8
+  const planetScale = isSmallMobile ? 0.7 : isMobile ? 0.8 : 1
+  const orbitRadius = isSmallMobile ? 3.2 : isMobile ? 3.5 : 4
+  const iconScale = isSmallMobile ? 0.8 : isMobile ? 0.9 : 1
+
+  return (
+    <div style={{ 
+      padding: isMobile ? '2rem 1rem' : '4rem 3rem',
+      maxWidth: '1200px',
+      margin: '0 auto',
+      textAlign: 'center'
+    }}>
+      <h2 style={{
+        fontSize: isSmallMobile ? '28px' : isMobile ? '32px' : '40px',
+        fontWeight: 600,
+        color: '#ffffff',
+        marginBottom: '2rem'
+      }}>
+        Skills
+      </h2>
+    
+      <div style={{ 
+        display: "flex", 
+        textAlign: "center", 
+        width: "100%", 
+        height: dimensions.height,
+        background: 'transparent',
+        borderRadius: '20px',
+        overflow: 'hidden',
+        position: 'relative'
+      }}>
+        <Canvas 
+          camera={{ position: [0, 0, cameraDistance], fov: 50 }}
+          style={{ width: '100%', height: '100%', paddingBottom: '50px' }}
+        >
+          <ambientLight intensity={5} />
+          <directionalLight position={[5, 5, 5]} intensity={7} />
+          <Planet scale={planetScale} />
+          <SkillOrbit skills={skills} radius={orbitRadius} iconScale={iconScale} />
+          <OrbitControls
+            enablePan={false}
+            enableZoom={false}
+            maxPolarAngle={Math.PI / 2.8}
+            minPolarAngle={Math.PI / 2.8}
+            rotateSpeed={isMobile ? 0.3 : 0.5}
+          />
+        </Canvas>
+      </div>
     </div>
   )
 }
